@@ -1,0 +1,10 @@
+# we must pass 2 variables
+# 1.component
+# 2. environment
+- name: "configure {{ component }} server"
+  hosts: backend
+  become: yes #remote-server
+  vars_files:
+  - variable.{{ environment }}
+  roles:
+  - {{ component }}
